@@ -12,7 +12,8 @@
 | --- | --- |
 |Machine Learning|:star: :star: :star: :star:|   
 |Deep Learning|:star: :star:|     
-|NLP|:star: :star:|                             
+|NLP|:star: :star:|
+|SQL|:star: :star: :star:|
 |Python|:star: :star: :star: :star:|            
 |C++|:star: :star: :star: :star:|
 |HTML|:star: :star: :star: :star:|
