@@ -8,7 +8,7 @@
 <br/>
 
 
-**Skills**<br/>
+|Skills|Ratings|
 |Machine Learning|:star: :star: :star: :star:|   
 |Deep Learning|:star: :star:|     
 |NLP|:star: :star:|                             
