@@ -14,11 +14,18 @@
 |Deep Learning|:star: :star:|     
 |NLP|:star: :star:|
 |SQL|:star: :star: :star:|
+|MongoDB|:star: :star:|
 |Python|:star: :star: :star: :star:|            
 |C++|:star: :star: :star: :star:|
 |HTML|:star: :star: :star: :star:|
+|CSS3|:star: :star:|
+|Bootstrap|:star: :star: :star: :star:|
+|Javascript|:star: :star:|
 |Data Structures And Algorithm|:star: :star: :star:|
-|Statistics|:star: :star: :star:|
+|Statistics And Probability|:star: :star: :star:|
 |Linear Algebra|:star: :star:|                           
 |Data Analysis|:star: :star: :star: :star:|              
-|Tableau|:star: :star: :star:|                         
+|Tableau|:star: :star: :star:|
+|Streamlit|:star: :star: :star:|
+|flask|:star:star|
+|Docker|:star|
