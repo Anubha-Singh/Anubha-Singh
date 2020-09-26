@@ -27,5 +27,5 @@
 |Data Analysis|:star: :star: :star: :star:|              
 |Tableau|:star: :star: :star:|
 |Streamlit|:star: :star: :star:|
-|flask|:star:star|
-|Docker|:star|
+|flask|:star: :star:|
+|Docker|:star:|
