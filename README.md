@@ -25,7 +25,8 @@
 |Data Structures And Algorithm|:star: :star: :star:|
 |Statistics And Probability|:star: :star: :star:|
 |Linear Algebra|:star: :star:|                           
-|Data Analysis|:star: :star: :star: :star:|              
+|Data Analysis|:star: :star: :star: :star:| 
+|Data Visualization|:star: :star: :star: :star:|
 |Tableau|:star: :star: :star:|
 |Streamlit|:star: :star: :star:|
 |flask|:star: :star:|
