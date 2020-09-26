@@ -11,7 +11,8 @@
 |Skills|Ratings|
 | --- | --- |
 |Machine Learning|:star: :star: :star: :star:|   
-|Deep Learning|:star: :star:|     
+|Deep Learning|:star: :star:|
+|OpenCV|:star: :star:|
 |NLP|:star: :star:|
 |SQL|:star: :star: :star:|
 |MongoDB|:star: :star:|
