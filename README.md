@@ -7,5 +7,7 @@
 - 📫 Reach me: ...https://www.linkedin.com/in/anubha-singh-310879148/
 <br/>
 
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=Anubha-Singh&show_icons=true" alt="Anubha-Singh" /> </p>
+<br/>
 
 
