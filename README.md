@@ -30,7 +30,7 @@
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" title="flask"></code>
 <code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/django/django-original.svg" title="django"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" title="git"></code>
-<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" title="vscode"></code>
+
 
 ### Top Languages
 
@@ -44,4 +44,4 @@
 ### Follow me
 
 [![Linkedin Badge](https://img.shields.io/badge/-Anubha%20Singh-blue?style=flat-circle&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anubha-singh-310879148/)](https://www.linkedin.com/in/anubha-singh-310879148/)
-[![Gmail Badge](https://img.shields.io/badge/-@Anubha-Singh-d54b3d?style=flat-circle&labelColor=d54b3d&logo=gmail&logoColor=white&link=mailto:anubhabit687@gmail.com)](mailto:anubhabit687@gmail.com)
+[![Gmail Badge](https://img.shields.io/badge/-@AnubhaSingh-d54b3d?style=flat-circle&labelColor=d54b3d&logo=gmail&logoColor=white&link=mailto:anubhabit687@gmail.com)](mailto:anubhabit687@gmail.com)
