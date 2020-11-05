@@ -1,4 +1,6 @@
-### Hi there 👋
+## Hi there, I'm [Anubha] <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width=35 height=35>
+
+![Profile Views](https://komarev.com/ghpvc/?username=Anubha-Singh&style=flat-square)
 
 
 **Welcome To My Work World,Though A Lot More To Add :)**
@@ -6,8 +8,7 @@
 - 👯 I’m looking to collaborate on some Machine learning,Deep learning or NLP projects.
 - 📫 Reach me: ...https://www.linkedin.com/in/anubha-singh-310879148/
 <br/>
-![Profile Views](https://komarev.com/ghpvc/?username=Anubha-Singh&style=flat-square)
-<br/>
+
 <p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=Anubha-Singh&show_icons=true" alt="Anubha-Singh" /> </p>
 <br/>
 
