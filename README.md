@@ -14,7 +14,7 @@
 
 ### Worked with 
 
-<code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/python/python-original.svg" title="python"></code>
+<code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="python"></code>
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/scikit-learn/scikit-learn.png" title="sklearn"></code>
 <code><img height="40" src="https://github.com/valohai/ml-logos/blob/master/numpy-simple.svg" title="Numpy"></code>
 <code><img height="40" src="https://github.com/valohai/ml-logos/blob/master/pandas.svg" title ="Pandas"></code>
@@ -23,10 +23,10 @@
 <code><img height="40" src="https://matplotlib.org/_static/logo2.svg" title="matplotlib"></code>
 <code><img height="40" src="https://github.com/mwaskom/seaborn/blob/master/doc/_static/logo-wide-lightbg.svg" title="seaborn"></code>
 
-<code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" title="javascript"></code>
+<code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="javascript"></code>
 <code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="html5"></code>
-<code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/c/c-original.svg" title="C"></code>
-<code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg" title="css"></code>
+<code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" title="C"></code>
+<code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="css"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" title="flask"></code>
 <code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/django/django-original.svg" title="django"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" title="git"> </code>
