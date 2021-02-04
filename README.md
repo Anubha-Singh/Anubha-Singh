@@ -28,7 +28,7 @@
 <code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" title="C"></code>
 <code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="css"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" title="flask"></code>
-<code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/django/django-original.svg" title="django"></code>
+<code><img height="40" src="https://github.com/devicons/devicon/blob/master/icons/django/django-original.svg" title="django"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" title="git"> </code>
 
 
