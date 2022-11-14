@@ -32,13 +32,7 @@
 <code><img height="40" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" title="git"> </code>
 
 
-### Top Languages
 
-<p align="center">
-<a href = "https://github.com/kishan0725">
-  <img src="https://github-readme-stats-aj8vj7k8x.vercel.app/api/top-langs/?username=Anubha-Singh&layout=compact&title_color=ffc857&icon_color=8ac926&text_color=daf7dc&bg_color=151515&card_width=400">
-</a>
-</p>
 
 
 ### Follow me
