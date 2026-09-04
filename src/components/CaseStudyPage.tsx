@@ -15,9 +15,9 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
         <h1 className="mt-3 text-4xl leading-tight text-ink sm:text-5xl">{study.title}</h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{study.summary}</p>
 
-        <dl className="mt-10 grid gap-px overflow-hidden rounded border border-border bg-border sm:grid-cols-2">
+        <dl className="mt-10 grid gap-4 sm:grid-cols-2">
           {study.metrics.map((m) => (
-            <div key={m.label} className="bg-card px-5 py-4">
+            <div key={m.label} className="rounded border border-border bg-card px-5 py-4">
               <dt className="eyebrow">{m.label}</dt>
               <dd className="mt-1 font-display text-2xl text-primary">{m.value}</dd>
             </div>

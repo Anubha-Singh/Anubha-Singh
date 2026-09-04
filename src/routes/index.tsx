@@ -125,7 +125,20 @@ function Index() {
             I'm focused on growing as a product builder in a product-first tech company and solving
             problems that create meaningful impact at scale.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                rel={link.href.startsWith("mailto") ? undefined : "noreferrer"}
+                className="font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/"
               hash="work"
