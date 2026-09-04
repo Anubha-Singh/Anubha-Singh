@@ -144,3 +144,81 @@
     color: var(--color-foreground);
   }
 }
+
+@theme inline {
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: var(--ink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility rule-top {
+  border-top: 1px solid var(--border);
+}
+
+@utility prose-case {
+  & p {
+    color: var(--muted-foreground);
+    line-height: 1.75;
+    margin-block: 0.75rem;
+  }
+  & h2 {
+    font-size: 1.9rem;
+    margin-top: 3rem;
+    color: var(--ink);
+  }
+  & h3 {
+    font-size: 1.35rem;
+    margin-top: 2rem;
+    color: var(--ink);
+  }
+  & ul {
+    margin-block: 0.75rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  & li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--muted-foreground);
+    line-height: 1.65;
+  }
+  & li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.66em;
+    width: 0.4rem;
+    height: 1px;
+    background: var(--primary);
+  }
+  & strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+}
