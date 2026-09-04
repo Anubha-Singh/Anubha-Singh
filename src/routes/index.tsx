@@ -20,6 +20,42 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
+  { label: "GitHub", href: "https://github.com/Anubha-Singh" },
+  { label: "Kaggle", href: "https://www.kaggle.com/cerolacia" },
+  { label: "Medium", href: "https://medium.com/@anubhabit687" },
+  { label: "Email", href: "mailto:anubhabit687@gmail.com" },
+];
+
+const experience = [
+  {
+    org: "Classplus",
+    role: "Associate Product Manager — Postly",
+    period: "May 2026 – Jul 2026",
+  },
+  {
+    org: "KPN Fresh",
+    role: "Associate Product Manager — Subscriptions, Promotions & CX Automation",
+    period: "Feb 2024 – Apr 2026",
+  },
+  {
+    org: "Quleep",
+    role: "Product Manager — ARNxt (AR Commerce)",
+    period: "Jan 2023 – Jul 2023",
+  },
+  {
+    org: "Siemens Ltd",
+    role: "PMO Professional — Mobility",
+    period: "May 2022 – Nov 2022",
+  },
+  {
+    org: "Urban Company",
+    role: "Category Growth Associate",
+    period: "Jul 2021 – Apr 2022",
+  },
+];
+
 const internships = [
   {
     org: "Urban Company",
