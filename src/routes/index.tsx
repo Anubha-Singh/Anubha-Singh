@@ -162,13 +162,13 @@ function Index() {
             Real products I've shipped — focused on impact, trade-offs and execution.
           </h2>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded border border-border bg-border">
+          <div className="mt-12 grid gap-4">
             {caseStudies.map((c) => (
               <Link
                 key={c.slug}
                 to="/work/$slug"
                 params={{ slug: c.slug }}
-                className="group grid gap-6 bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
+                className="group grid gap-6 rounded border border-border bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
               >
                 <div>
                   <p className="eyebrow">
