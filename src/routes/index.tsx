@@ -20,6 +20,42 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
+  { label: "GitHub", href: "https://github.com/Anubha-Singh" },
+  { label: "Kaggle", href: "https://www.kaggle.com/cerolacia" },
+  { label: "Medium", href: "https://medium.com/@anubhabit687" },
+  { label: "Email", href: "mailto:anubhabit687@gmail.com" },
+];
+
+const experience = [
+  {
+    org: "Classplus",
+    role: "Associate Product Manager — Postly",
+    period: "May 2026 – Jul 2026",
+  },
+  {
+    org: "KPN Fresh",
+    role: "Associate Product Manager — Subscriptions, Promotions & CX Automation",
+    period: "Feb 2024 – Apr 2026",
+  },
+  {
+    org: "Quleep",
+    role: "Product Manager — ARNxt (AR Commerce)",
+    period: "Jan 2023 – Jul 2023",
+  },
+  {
+    org: "Siemens Ltd",
+    role: "PMO Professional — Mobility",
+    period: "May 2022 – Nov 2022",
+  },
+  {
+    org: "Urban Company",
+    role: "Category Growth Associate",
+    period: "Jul 2021 – Apr 2022",
+  },
+];
+
 const internships = [
   {
     org: "Urban Company",
@@ -47,27 +83,26 @@ const internships = [
   },
 ];
 
-const alsoWorking = [
+const workSamples = [
   {
-    title: "TrustRent — Escrow-Based Rental Transaction Platform",
-    note: "Founder / Product Manager · independent product build (WIP)",
+    title: "CMS — Banners",
+    note: "Centralized CMS that cut release TAT from days to minutes.",
+    href: "https://docs.google.com/presentation/d/1g73hz4a9bySwNpYzwrlINu-Sl0smvIY5/edit?usp=sharing&ouid=114924555015695209001&rtpof=true&sd=true",
   },
   {
-    title: "Chatbots as a generic issue-resolution layer",
-    note: "Evaluated across the order lifecycle and deliberately chose not to ship them.",
+    title: "POS Gap Analysis",
+    note: "30+ gaps identified to shape the POS 2.0 roadmap.",
+    href: "https://docs.google.com/presentation/d/1_PHTe62otXeZ-fqPo3bQLQoc7HF7J0bX/edit?usp=sharing&ouid=103117566921272872624&rtpof=true&sd=true",
   },
   {
-    title: "Improving Experience for Non-Native Users",
-    note: "PM Fellowship · Top PM Fellow",
-    href: "https://drive.google.com/file/d/10OU6CjcebIYX1X6m954bYrSjb74HE9kc/view?usp=sharing",
+    title: "Loyalty — Tier-Based B2P Program",
+    note: "Designed for 15K+ partners with 16–22% returns.",
+    href: "https://docs.google.com/presentation/d/1Qpb8hU0vGzrsFdX2Y0qyT7q3LYQ3ycUv/edit?usp=sharing&ouid=114924555015695209001&rtpof=true&sd=true",
   },
   {
-    title: "SIH19 Solution Proposal",
-    note: "Shortlisted among 900 of 37,000+ ideas · Top 4 of 900",
-  },
-  {
-    title: "Learn In Public Challenge — Winner",
-    note: "Product teardowns and certifications",
+    title: "Chatbot Flow",
+    note: "Issue-resolution chatbot flows evaluated across the order lifecycle.",
+    href: "https://docs.google.com/presentation/d/123MKN5ajBoX7lEWXsZTO-SZue58pCvLA/edit?usp=sharing&ouid=103117566921272872624&rtpof=true&sd=true",
   },
 ];
 
@@ -90,7 +125,20 @@ function Index() {
             I'm focused on growing as a product builder in a product-first tech company and solving
             problems that create meaningful impact at scale.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                rel={link.href.startsWith("mailto") ? undefined : "noreferrer"}
+                className="font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/"
               hash="work"
@@ -114,13 +162,13 @@ function Index() {
             Real products I've shipped — focused on impact, trade-offs and execution.
           </h2>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded border border-border bg-border">
+          <div className="mt-12 grid gap-4">
             {caseStudies.map((c) => (
               <Link
                 key={c.slug}
                 to="/work/$slug"
                 params={{ slug: c.slug }}
-                className="group grid gap-6 bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
+                className="group grid gap-6 rounded border border-border bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
               >
                 <div>
                   <p className="eyebrow">
@@ -152,50 +200,66 @@ function Index() {
         </section>
 
         <section id="experience" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
-          <p className="eyebrow">Experience & internships</p>
+          <p className="eyebrow">Experience</p>
+          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Where I've worked full-time.</h2>
+          <div className="mt-10 grid gap-6">
+            {experience.map((e) => (
+              <div
+                key={e.org}
+                className="grid gap-1 rounded border border-border bg-card px-6 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6"
+              >
+                <div>
+                  <h3 className="text-xl text-ink">{e.org}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{e.role}</p>
+                </div>
+                <p className="eyebrow sm:text-right">{e.period}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="internships" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Internships</p>
           <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Where I learned to ship.</h2>
-          <div className="mt-10 grid gap-10 sm:grid-cols-3">
+          <div className="mt-10 grid gap-10">
             {internships.map((i) => (
-              <div key={i.org}>
-                <h3 className="text-xl text-ink">{i.org}</h3>
-                <p className="eyebrow mt-1">{i.role}</p>
-                <ul className="mt-4 grid gap-3">
-                  {i.points.map((p) => (
-                    <li
-                      key={p}
-                      className="border-l border-border pl-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+              <div key={i.org} className="rounded border border-border bg-card px-6 py-6">
+                <div className="grid gap-1 sm:grid-cols-[auto_1fr] sm:items-baseline sm:gap-4">
+                  <h3 className="text-xl text-ink">{i.org}</h3>
+                  <p className="eyebrow">{i.role}</p>
+                </div>
+                {i.points.length > 0 && (
+                  <ul className="mt-4 grid gap-3">
+                    {i.points.map((p) => (
+                      <li
+                        key={p}
+                        className="border-l border-border pl-3 text-sm leading-relaxed text-muted-foreground"
+                      >
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </section>
 
         <section className="rule-top mx-auto max-w-5xl px-6 py-16">
-          <p className="eyebrow">Work samples, fellowship & recognition</p>
-          <div className="mt-8 grid gap-px overflow-hidden rounded border border-border bg-border sm:grid-cols-2">
-            {alsoWorking.map((w) =>
-              w.href ? (
-                <a
-                  key={w.title}
-                  href={w.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-card px-6 py-6 transition-colors hover:bg-secondary"
-                >
-                  <h3 className="text-lg text-ink">{w.title} ↗</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
-                </a>
-              ) : (
-                <div key={w.title} className="bg-card px-6 py-6">
-                  <h3 className="text-lg text-ink">{w.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
-                </div>
-              ),
-            )}
+          <p className="eyebrow">Work samples</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {workSamples.map((w) => (
+              <a
+                key={w.title}
+                href={w.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded border border-border bg-card px-6 py-6 transition-colors hover:bg-secondary"
+              >
+                <h3 className="text-lg text-ink">{w.title} ↗</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
+              </a>
+            ))}
           </div>
         </section>
       </main>
