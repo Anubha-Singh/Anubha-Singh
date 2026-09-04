@@ -142,8 +142,9 @@ function Index() {
                   </div>
                 </div>
                 <div className="sm:text-right">
-                  <p className="font-display text-3xl text-primary">{c.metrics[0].value}</p>
-                  <p className="text-xs text-muted-foreground">{c.metrics[0].label}</p>
+                  <p className="font-display text-3xl text-primary">{c.metrics[0]?.value}</p>
+                  <p className="text-xs text-muted-foreground">{c.metrics[0]?.label}</p>
+
                 </div>
               </Link>
             ))}
