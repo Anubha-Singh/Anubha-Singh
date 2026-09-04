@@ -83,27 +83,26 @@ const internships = [
   },
 ];
 
-const alsoWorking = [
+const workSamples = [
   {
-    title: "TrustRent — Escrow-Based Rental Transaction Platform",
-    note: "Founder / Product Manager · independent product build (WIP)",
+    title: "CMS — Banners",
+    note: "Centralized CMS that cut release TAT from days to minutes.",
+    href: "https://docs.google.com/presentation/d/1g73hz4a9bySwNpYzwrlINu-Sl0smvIY5/edit?usp=sharing&ouid=114924555015695209001&rtpof=true&sd=true",
   },
   {
-    title: "Chatbots as a generic issue-resolution layer",
-    note: "Evaluated across the order lifecycle and deliberately chose not to ship them.",
+    title: "POS Gap Analysis",
+    note: "30+ gaps identified to shape the POS 2.0 roadmap.",
+    href: "https://docs.google.com/presentation/d/1_PHTe62otXeZ-fqPo3bQLQoc7HF7J0bX/edit?usp=sharing&ouid=103117566921272872624&rtpof=true&sd=true",
   },
   {
-    title: "Improving Experience for Non-Native Users",
-    note: "PM Fellowship · Top PM Fellow",
-    href: "https://drive.google.com/file/d/10OU6CjcebIYX1X6m954bYrSjb74HE9kc/view?usp=sharing",
+    title: "Loyalty — Tier-Based B2P Program",
+    note: "Designed for 15K+ partners with 16–22% returns.",
+    href: "https://docs.google.com/presentation/d/1Qpb8hU0vGzrsFdX2Y0qyT7q3LYQ3ycUv/edit?usp=sharing&ouid=114924555015695209001&rtpof=true&sd=true",
   },
   {
-    title: "SIH19 Solution Proposal",
-    note: "Shortlisted among 900 of 37,000+ ideas · Top 4 of 900",
-  },
-  {
-    title: "Learn In Public Challenge — Winner",
-    note: "Product teardowns and certifications",
+    title: "Chatbot Flow",
+    note: "Issue-resolution chatbot flows evaluated across the order lifecycle.",
+    href: "https://docs.google.com/presentation/d/123MKN5ajBoX7lEWXsZTO-SZue58pCvLA/edit?usp=sharing&ouid=103117566921272872624&rtpof=true&sd=true",
   },
 ];
 
