@@ -200,50 +200,66 @@ function Index() {
         </section>
 
         <section id="experience" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
-          <p className="eyebrow">Experience & internships</p>
+          <p className="eyebrow">Experience</p>
+          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Where I've worked full-time.</h2>
+          <div className="mt-10 grid gap-6">
+            {experience.map((e) => (
+              <div
+                key={e.org}
+                className="grid gap-1 rounded border border-border bg-card px-6 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6"
+              >
+                <div>
+                  <h3 className="text-xl text-ink">{e.org}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{e.role}</p>
+                </div>
+                <p className="eyebrow sm:text-right">{e.period}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="internships" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Internships</p>
           <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Where I learned to ship.</h2>
-          <div className="mt-10 grid gap-10 sm:grid-cols-3">
+          <div className="mt-10 grid gap-10">
             {internships.map((i) => (
-              <div key={i.org}>
-                <h3 className="text-xl text-ink">{i.org}</h3>
-                <p className="eyebrow mt-1">{i.role}</p>
-                <ul className="mt-4 grid gap-3">
-                  {i.points.map((p) => (
-                    <li
-                      key={p}
-                      className="border-l border-border pl-3 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+              <div key={i.org} className="rounded border border-border bg-card px-6 py-6">
+                <div className="grid gap-1 sm:grid-cols-[auto_1fr] sm:items-baseline sm:gap-4">
+                  <h3 className="text-xl text-ink">{i.org}</h3>
+                  <p className="eyebrow">{i.role}</p>
+                </div>
+                {i.points.length > 0 && (
+                  <ul className="mt-4 grid gap-3">
+                    {i.points.map((p) => (
+                      <li
+                        key={p}
+                        className="border-l border-border pl-3 text-sm leading-relaxed text-muted-foreground"
+                      >
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </section>
 
         <section className="rule-top mx-auto max-w-5xl px-6 py-16">
-          <p className="eyebrow">Work samples, fellowship & recognition</p>
-          <div className="mt-8 grid gap-px overflow-hidden rounded border border-border bg-border sm:grid-cols-2">
-            {alsoWorking.map((w) =>
-              w.href ? (
-                <a
-                  key={w.title}
-                  href={w.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-card px-6 py-6 transition-colors hover:bg-secondary"
-                >
-                  <h3 className="text-lg text-ink">{w.title} ↗</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
-                </a>
-              ) : (
-                <div key={w.title} className="bg-card px-6 py-6">
-                  <h3 className="text-lg text-ink">{w.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
-                </div>
-              ),
-            )}
+          <p className="eyebrow">Work samples</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {workSamples.map((w) => (
+              <a
+                key={w.title}
+                href={w.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded border border-border bg-card px-6 py-6 transition-colors hover:bg-secondary"
+              >
+                <h3 className="text-lg text-ink">{w.title} ↗</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
+              </a>
+            ))}
           </div>
         </section>
       </main>
