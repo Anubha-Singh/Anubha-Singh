@@ -24,13 +24,35 @@ export function SiteHeader() {
   );
 }
 
+const contactLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
+  { label: "GitHub", href: "https://github.com/Anubha-Singh" },
+  { label: "Kaggle", href: "https://www.kaggle.com/cerolacia" },
+  { label: "Medium", href: "https://medium.com/@anubhabit687" },
+  { label: "Email", href: "mailto:anubhabit687@gmail.com" },
+  { label: "Phone", href: "tel:+917903762263" },
+];
+
 export function SiteFooter() {
   return (
     <footer id="contact" className="rule-top mt-24">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-12 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-12 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow">Get in touch</p>
           <h2 className="mt-2 text-3xl text-ink">Let's talk product systems.</h2>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto") || link.href.startsWith("tel") ? undefined : "_blank"}
+                rel={link.href.startsWith("mailto") || link.href.startsWith("tel") ? undefined : "noreferrer"}
+                className="text-muted-foreground transition-colors hover:text-primary"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
         </div>
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} Anubha Singh · Product Manager
