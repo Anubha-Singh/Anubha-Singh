@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/SiteChrome";
+import { socialIconMap } from "@/components/SocialIcons";
 import { caseStudies } from "@/data/caseStudies";
+
 
 const TITLE = "Anubha Singh — Product Manager | Platform & Growth Systems";
 const DESC =
