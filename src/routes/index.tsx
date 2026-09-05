@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/SiteChrome";
 import { socialIconMap } from "@/components/SocialIcons";
 import { caseStudies } from "@/data/caseStudies";
+import portrait from "@/assets/anubha-blazer.jpg";
 
 
 const TITLE = "Anubha Singh — Product Manager | Platform & Growth Systems";
@@ -113,11 +114,20 @@ function Index() {
     <Page>
       <main>
         <section className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
-          <p className="eyebrow">Product Manager · Platform & Growth</p>
-          <h1 className="mt-5 max-w-3xl text-4xl leading-[1.08] text-ink sm:text-6xl">
-            I build scalable product systems that balance growth, user experience and financial
-            control.
-          </h1>
+          <div className="flex flex-col-reverse gap-10 sm:flex-row sm:items-start sm:justify-between">
+            <div className="min-w-0">
+              <p className="eyebrow">Product Manager · Platform & Growth</p>
+              <h1 className="mt-5 max-w-3xl text-4xl leading-[1.08] text-ink sm:text-6xl">
+                I build scalable product systems that balance growth, user experience and financial
+                control.
+              </h1>
+            </div>
+            <img
+              src={portrait}
+              alt="Anubha Singh in a black blazer"
+              className="h-44 w-44 shrink-0 rounded-full border border-border object-cover object-top shadow-sm sm:h-56 sm:w-56"
+            />
+          </div>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             I moved into product because I enjoyed understanding why systems break, how decisions
             scale and where users feel the impact when things go wrong. Through my work on growth,
