@@ -134,12 +134,15 @@ function Index() {
                 href={link.href}
                 target={link.href.startsWith("mailto") ? undefined : "_blank"}
                 rel={link.href.startsWith("mailto") ? undefined : "noreferrer"}
-                className="font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-1.5 font-medium text-muted-foreground transition-colors hover:text-primary"
+                aria-label={link.label}
               >
-                {link.label} ↗
+                {socialIconMap[link.label]}
+                <span>{link.label}</span>
               </a>
             ))}
           </div>
+
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/"
