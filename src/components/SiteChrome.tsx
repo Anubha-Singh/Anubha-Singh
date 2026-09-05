@@ -49,11 +49,14 @@ export function SiteFooter() {
                 href={link.href}
                 target={link.href.startsWith("mailto") || link.href.startsWith("tel") ? undefined : "_blank"}
                 rel={link.href.startsWith("mailto") || link.href.startsWith("tel") ? undefined : "noreferrer"}
-                className="text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
+                aria-label={link.label}
               >
-                {link.label} ↗
+                {socialIconMap[link.label]}
+                <span>{link.label}</span>
               </a>
             ))}
+
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
