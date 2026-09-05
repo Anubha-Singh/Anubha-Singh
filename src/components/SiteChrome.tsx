@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
+import { socialIconMap } from "@/components/SocialIcons";
 import type { ReactNode } from "react";
+
 
 export function SiteHeader() {
   return (
