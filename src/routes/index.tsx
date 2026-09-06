@@ -123,8 +123,8 @@ function Index() {
               </h1>
             </div>
             <img
-              src={portrait}
-              alt="Anubha Singh in a black blazer"
+              src={portraitAsset.url}
+              alt="Portrait of Anubha Singh"
               className="h-44 w-44 shrink-0 rounded-full border border-border object-cover object-top shadow-sm sm:h-56 sm:w-56"
             />
           </div>
