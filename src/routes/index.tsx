@@ -116,7 +116,7 @@ function Index() {
         <section className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
           <div className="flex flex-col-reverse gap-10 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
-              <p className="eyebrow">Product Manager · Platform & Growth</p>
+              <p className="eyebrow">Product Professional · Platform & Growth</p>
               <h1 className="mt-5 max-w-3xl text-4xl leading-[1.08] text-ink sm:text-6xl">
                 I build scalable product systems that balance growth, user experience and financial
                 control.
