@@ -2,8 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/SiteChrome";
 import { socialIconMap } from "@/components/SocialIcons";
 import { caseStudies } from "@/data/caseStudies";
-import portrait from "@/assets/anubha-portrait.jpg";
-
+import portraitAsset from "@/assets/anubha-portrait.jpg.asset.json";
 
 
 const TITLE = "Anubha Singh — Product Manager | Platform & Growth Systems";
@@ -124,7 +123,7 @@ function Index() {
               </h1>
             </div>
             <img
-              src={portrait}
+              src={portraitAsset.url}
               alt="Portrait of Anubha Singh"
               className="h-44 w-44 shrink-0 rounded-full border border-border object-cover object-top shadow-sm sm:h-56 sm:w-56"
             />
