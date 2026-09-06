@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/SiteChrome";
 import { socialIconMap } from "@/components/SocialIcons";
 import { caseStudies } from "@/data/caseStudies";
-import portrait from "@/assets/anubha-blazer.jpg";
+import portraitAsset from "@/assets/anubha-portrait.jpg.asset.json";
 
 
 const TITLE = "Anubha Singh — Product Manager | Platform & Growth Systems";
