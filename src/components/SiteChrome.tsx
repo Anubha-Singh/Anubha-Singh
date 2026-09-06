@@ -60,7 +60,7 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Anubha Singh · Product Manager
+          © {new Date().getFullYear()} Anubha Singh · Product Professional
         </p>
       </div>
     </footer>
