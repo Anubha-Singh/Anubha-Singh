@@ -109,6 +109,72 @@ const workSamples = [
   },
 ];
 
+const skillCategories = [
+  {
+    title: "Core PM Skills",
+    skills: [
+      "Product Strategy and Execution",
+      "PRD Writing",
+      "BRD",
+      "FRD",
+      "Requirement Gathering",
+      "Roadmapping",
+      "Agile and Sprint Planning",
+      "Scrum",
+      "UAT",
+      "A/B Testing and Experimentation",
+      "Funnel Optimization",
+      "Go-to-Market (GTM)",
+      "User Research",
+      "Cross-functional Collaboration",
+    ],
+  },
+  {
+    title: "Data, Tools & Platforms",
+    skills: [
+      "SQL",
+      "BigQuery",
+      "GA",
+      "Clevertap",
+      "Excel",
+      "Looker",
+      "Power BI",
+      "Generative AI",
+      "Microsoft Azure",
+      "Payment Gateway Integration (Razorpay)",
+      "APIs and Payments (Postman)",
+      "Figma",
+      "Jira",
+      "Confluence",
+      "Python",
+      "Branch.io",
+      "Microsoft Clarity",
+      "Google AI Studio",
+      "Cursor",
+      "Claude Code",
+      "Vercel",
+      "Cloudflare",
+    ],
+  },
+  {
+    title: "Fintech Domain Knowledge",
+    skills: [
+      "BaaS",
+      "Open Banking",
+      "Digital Identity",
+      "Bank Lending",
+      "Credit Score",
+      "BNPL Monetization Model and Unit Economics",
+      "Smart Routing Orchestration",
+      "Card Based Payments (Issuing, Acquiring, MDR, Refund, Chargebacks and Reconciliation)",
+      "Account to Account Payment (UPI, ACH, RTP, FPS)",
+      "Cross Border Payment using SWIFT and Modern FX",
+      "FX Pricing (Markups, Mid Market, Conversion Logic)",
+      "DeFi",
+    ],
+  },
+];
+
 function Index() {
   return (
     <Page>
@@ -168,6 +234,30 @@ function Index() {
             >
               Experience
             </Link>
+          </div>
+        </section>
+
+        <section id="skills" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Skills & expertise</p>
+          <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
+            The toolkit behind every product decision.
+          </h2>
+          <div className="mt-10 grid gap-8">
+            {skillCategories.map((category) => (
+              <div key={category.title} className="rounded border border-border bg-card px-6 py-6">
+                <h3 className="text-xl text-ink">{category.title}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
