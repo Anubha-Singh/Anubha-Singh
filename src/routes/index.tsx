@@ -261,6 +261,26 @@ function Index() {
           </div>
         </section>
 
+        <section id="certifications" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Certifications</p>
+          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Credentials that back the craft.</h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              { name: "Certified Scrum Product Owner (CSPO)", issuer: "Scrum Alliance" },
+              { name: "Agile Introduction for Product Owners (AIPO)", issuer: "Scrum Alliance" },
+              { name: "MTA — Introduction to Programming Using Python", issuer: "Microsoft" },
+            ].map((cert) => (
+              <div
+                key={cert.name}
+                className="rounded border border-border bg-card px-6 py-6 transition-colors hover:bg-secondary"
+              >
+                <h3 className="text-lg leading-snug text-ink">{cert.name}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{cert.issuer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="work" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
           <p className="eyebrow">Selected case studies</p>
           <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
