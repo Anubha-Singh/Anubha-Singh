@@ -263,8 +263,7 @@ function Index() {
 
         <section id="certifications" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
           <p className="eyebrow">Certifications</p>
-          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">Credentials that back the craft.</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               { name: "Certified Scrum Product Owner (CSPO)", issuer: "Scrum Alliance" },
               { name: "Agile Introduction for Product Owners (AIPO)", issuer: "Scrum Alliance" },
