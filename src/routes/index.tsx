@@ -23,6 +23,28 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const recommendations = [
+  {
+    name: "Shubham Kumar",
+    title: "Strategy @ D. E. Shaw",
+    meta: "May 16, 2022 · Shubham managed Anubha directly",
+    quote: [
+      "Anubha is an excellent team member and one of the most hardworking associates I had the opportunity to work with. Her ability to deep dive, understand and solve problems using first principles is commendable and she proved to be an immense asset in Chefs category growth",
+    ],
+  },
+  {
+    name: "Siddhartha Agarwal",
+    title:
+      "Building OFF/BEAT | ISB Co'24 (Torchbearer Awardee, Merit Scholar) | Prev: House of Masaba (ABFRL), Urban Company",
+    meta: "April 12, 2022 · Siddhartha managed Anubha directly",
+    quote: [
+      "Anubha worked with in capacity of a colleague at Urban Company.",
+      "We launched the personal chefs category together at UC and Anubha displayed exemplary dedication. She left no stone unturned in making the category a success: from cold-calling customers for trials, to making SQL queries for the team, to handling customer/partner grievances and brainstorming new expansion ideas, she did it all.",
+      "She's an asset to every team she's a part of.",
+    ],
+  },
+];
+
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
   { label: "GitHub", href: "https://github.com/Anubha-Singh" },
