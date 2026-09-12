@@ -23,6 +23,28 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const recommendations = [
+  {
+    name: "Shubham Kumar",
+    title: "Strategy @ D. E. Shaw",
+    meta: "May 16, 2022 · Shubham managed Anubha directly",
+    quote: [
+      "Anubha is an excellent team member and one of the most hardworking associates I had the opportunity to work with. Her ability to deep dive, understand and solve problems using first principles is commendable and she proved to be an immense asset in Chefs category growth",
+    ],
+  },
+  {
+    name: "Siddhartha Agarwal",
+    title:
+      "Building OFF/BEAT | ISB Co'24 (Torchbearer Awardee, Merit Scholar) | Prev: House of Masaba (ABFRL), Urban Company",
+    meta: "April 12, 2022 · Siddhartha managed Anubha directly",
+    quote: [
+      "Anubha worked with in capacity of a colleague at Urban Company.",
+      "We launched the personal chefs category together at UC and Anubha displayed exemplary dedication. She left no stone unturned in making the category a success: from cold-calling customers for trials, to making SQL queries for the team, to handling customer/partner grievances and brainstorming new expansion ideas, she did it all.",
+      "She's an asset to every team she's a part of.",
+    ],
+  },
+];
+
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
   { label: "GitHub", href: "https://github.com/Anubha-Singh" },
@@ -383,6 +405,27 @@ function Index() {
                 <h3 className="text-lg text-ink">{w.title} ↗</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
               </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="recommendations" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Recommendations</p>
+          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">What colleagues say.</h2>
+          <div className="mt-10 grid gap-8">
+            {recommendations.map((r) => (
+              <figure key={r.name} className="rounded border border-border bg-card px-6 py-6">
+                <blockquote className="grid gap-4 text-[0.95rem] leading-relaxed text-muted-foreground">
+                  {r.quote.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </blockquote>
+                <figcaption className="mt-6 border-t border-border pt-4">
+                  <p className="text-ink">{r.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{r.title}</p>
+                  <p className="eyebrow mt-2">{r.meta}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </section>
