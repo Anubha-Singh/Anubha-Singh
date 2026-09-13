@@ -25,6 +25,14 @@ export const Route = createFileRoute("/")({
 
 const recommendations = [
   {
+    name: "Anupama Menon",
+    title: "Product Manager at Adeyn · earlier Senior Product Manager at KPN Fresh",
+    meta: "Anupama managed Anubha directly",
+    quote: [
+      "Anubha approaches every challenge with curiosity and a strong sense of ownership, conducting thorough research, studying industry products closely, and producing well-structured PRDs and wireframes. She takes feedback graciously and iterates quickly, which means her output keeps getting sharper. She also builds genuine rapport with both engineering and business teams, making cross-functional work smooth and collaborative. On the execution side, she has consistently been punctual and proactive in her communication, and has successfully launched multiple product initiatives. She's a fast learner with strong ownership instincts, and any team would be lucky to have her.",
+    ],
+  },
+  {
     name: "Shubham Kumar",
     title: "Strategy @ D. E. Shaw",
     meta: "May 16, 2022 · Shubham managed Anubha directly",
