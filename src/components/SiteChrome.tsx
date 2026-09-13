@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { socialIconMap } from "@/components/SocialIcons";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 
 export function SiteHeader() {
@@ -68,8 +68,36 @@ export function SiteFooter() {
 }
 
 export function Page({ children }: { children: ReactNode }) {
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = pageRef.current;
+    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const elements = root.querySelectorAll<HTMLElement>(
+      "main > section > *, article > *:not(.prose-case), .prose-case > *, footer > div > *",
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    elements.forEach((element) => {
+      element.classList.add("scroll-reveal");
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div ref={pageRef} className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       {children}
       <SiteFooter />
