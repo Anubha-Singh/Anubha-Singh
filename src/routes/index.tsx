@@ -419,11 +419,10 @@ function Index() {
 
         <section id="recommendations" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
           <p className="eyebrow">Recommendations</p>
-          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">What colleagues say.</h2>
           <div className="mt-10 grid gap-8">
             {recommendations.map((r) => (
               <figure key={r.name} className="rounded border border-border bg-card px-6 py-6">
-                <blockquote className="grid gap-4 text-[0.95rem] leading-relaxed text-muted-foreground">
+                <blockquote className="recommendation-quote grid gap-4 text-[0.95rem] leading-relaxed text-muted-foreground">
                   {r.quote.map((p) => (
                     <p key={p}>{p}</p>
                   ))}

@@ -181,6 +181,64 @@
   border-top: 1px solid var(--border);
 }
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section > .scroll-reveal:nth-child(2),
+article > .scroll-reveal:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+section > .scroll-reveal:nth-child(3),
+article > .scroll-reveal:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.recommendation-quote {
+  position: relative;
+  padding-inline: 1.75rem;
+}
+
+.recommendation-quote::before,
+.recommendation-quote::after {
+  position: absolute;
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.recommendation-quote::before {
+  content: "“";
+  left: 0;
+  top: -0.25rem;
+}
+
+.recommendation-quote::after {
+  content: "”";
+  right: 0;
+  bottom: -0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @utility prose-case {
   & p {
     color: var(--muted-foreground);
