@@ -262,8 +262,10 @@ function Index() {
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 text-sm leading-relaxed text-muted-foreground">
                   {category.skills.map((skill, j) => (
                     <span key={skill} className="inline-flex items-baseline gap-4">
-                      {j > 0 && <span className="text-primary/40">•</span>}
                       <span>{skill}</span>
+                      {j < category.skills.length - 1 && (
+                        <span className="text-primary/40">•</span>
+                      )}
                     </span>
                   ))}
                 </div>
