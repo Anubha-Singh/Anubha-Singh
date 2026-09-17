@@ -255,7 +255,7 @@ function Index() {
           <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
             The toolkit behind every product decision.
           </h2>
-          <div className="mt-10 grid gap-8">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {skillCategories.map((category) => (
               <div key={category.title} className="rounded border border-border bg-card px-6 py-6">
                 <h3 className="text-xl text-ink">{category.title}</h3>
