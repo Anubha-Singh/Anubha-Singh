@@ -296,7 +296,7 @@ function Index() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               { name: "Certified Scrum Product Owner (CSPO)", issuer: "Scrum Alliance" },
-              { name: "Agile Introduction for Product Owners (AIPO)", issuer: "Scrum Alliance" },
+              { name: "Artificial Intelligence for Product Owners (AIPO)", issuer: "Scrum Alliance" },
               { name: "MTA — Introduction to Programming Using Python", issuer: "Microsoft" },
             ].map((cert) => (
               <div
