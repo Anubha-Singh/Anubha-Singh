@@ -250,17 +250,22 @@ function Index() {
           <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
             The toolkit behind every product decision.
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {skillCategories.map((category) => (
-              <div key={category.title} className="rounded border border-border bg-card px-6 py-6">
-                <h3 className="text-xl text-ink">{category.title}</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                    >
-                      {skill}
+          <div className="mt-12 flex flex-col gap-10 sm:gap-12">
+            {skillCategories.map((category, i) => (
+              <div key={category.title}>
+                <div className="mb-4 flex items-baseline justify-between border-b border-border pb-2">
+                  <h3 className="font-display text-2xl text-ink">{category.title}</h3>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 text-sm leading-relaxed text-muted-foreground">
+                  {category.skills.map((skill, j) => (
+                    <span key={skill} className="inline-flex items-baseline gap-4">
+                      <span>{skill}</span>
+                      {j < category.skills.length - 1 && (
+                        <span className="text-primary/40">•</span>
+                      )}
                     </span>
                   ))}
                 </div>
