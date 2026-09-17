@@ -141,66 +141,49 @@ const workSamples = [
 
 const skillCategories = [
   {
-    title: "Core PM Skills",
+    title: "Product",
     skills: [
-      "Product Strategy and Execution",
-      "PRD Writing",
-      "BRD",
-      "FRD",
-      "Requirement Gathering",
-      "Roadmapping",
-      "Agile and Sprint Planning",
-      "Scrum",
-      "UAT",
-      "A/B Testing and Experimentation",
-      "Funnel Optimization",
-      "Go-to-Market (GTM)",
-      "User Research",
-      "Cross-functional Collaboration",
+      "Product Strategy",
+      "Product Discovery",
+      "0→1 Product Development",
+      "PRDs & Roadmaps",
+      "Prioritization",
+      "Experimentation",
+      "Product Analytics",
+      "Stakeholder Management",
     ],
   },
   {
-    title: "Data, Tools & Platforms",
+    title: "Data",
     skills: [
       "SQL",
       "BigQuery",
-      "GA",
-      "Clevertap",
-      "Excel",
       "Looker",
-      "Power BI",
-      "Generative AI",
-      "Microsoft Azure",
-      "Payment Gateway Integration (Razorpay)",
-      "APIs and Payments (Postman)",
-      "Figma",
-      "Jira",
-      "Confluence",
-      "Python",
-      "Branch.io",
-      "Microsoft Clarity",
-      "Google AI Studio",
-      "Cursor",
-      "Claude Code",
-      "Vercel",
-      "Cloudflare",
+      "Funnel & Cohort Analysis",
+      "A/B Testing",
+      "Product Metrics",
     ],
   },
   {
-    title: "Fintech Domain Knowledge",
+    title: "Technical",
     skills: [
-      "BaaS",
-      "Open Banking",
-      "Digital Identity",
-      "Bank Lending",
-      "Credit Score",
-      "BNPL Monetization Model and Unit Economics",
-      "Smart Routing Orchestration",
-      "Card Based Payments (Issuing, Acquiring, MDR, Refund, Chargebacks and Reconciliation)",
-      "Account to Account Payment (UPI, ACH, RTP, FPS)",
-      "Cross Border Payment using SWIFT and Modern FX",
-      "FX Pricing (Markups, Mid Market, Conversion Logic)",
-      "DeFi",
+      "APIs & Webhooks",
+      "Payment Systems",
+      "Event-driven Systems",
+      "Data/Analytics Platforms",
+      "Postman",
+      "Figma",
+    ],
+  },
+  {
+    title: "AI / Builder",
+    skills: [
+      "LLM Product Design",
+      "AI Evals",
+      "AI-assisted Prototyping",
+      "Lovable",
+      "Cursor / Claude Code",
+      "Rapid MVP Development",
     ],
   },
 ];
@@ -272,7 +255,7 @@ function Index() {
           <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
             The toolkit behind every product decision.
           </h2>
-          <div className="mt-10 grid gap-8">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {skillCategories.map((category) => (
               <div key={category.title} className="rounded border border-border bg-card px-6 py-6">
                 <h3 className="text-xl text-ink">{category.title}</h3>
