@@ -63,14 +63,9 @@ const socialLinks = [
 
 const experience = [
   {
-    org: "Classplus",
-    role: "Associate Product Manager — Postly",
-    period: "May 2026 – Jul 2026",
-  },
-  {
     org: "KPN Fresh",
     role: "Associate Product Manager — Subscriptions, Promotions & CX Automation",
-    period: "Feb 2024 – Apr 2026",
+    period: "Feb 2024 – Present",
   },
   {
     org: "Quleep",
