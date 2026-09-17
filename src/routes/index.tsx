@@ -154,6 +154,8 @@ const skillCategories = [
       "SQL",
       "BigQuery",
       "Looker",
+      "Tableau",
+      "Power BI",
       "Funnel & Cohort Analysis",
       "A/B Testing",
       "Product Metrics",
