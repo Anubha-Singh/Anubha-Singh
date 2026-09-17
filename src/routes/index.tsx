@@ -183,6 +183,7 @@ const skillCategories = [
       "Lovable",
       "Cursor / Claude Code",
       "Rapid MVP Development",
+      "Vercel",
     ],
   },
 ];
