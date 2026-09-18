@@ -14,6 +14,16 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
         </p>
         <h1 className="mt-3 text-4xl leading-tight text-ink sm:text-5xl">{study.title}</h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{study.summary}</p>
+        {study.link && (
+          <a
+            href={study.link.href}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary px-6 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            {study.link.label} ↗
+          </a>
+        )}
 
         <dl className="mt-10 grid gap-4 sm:grid-cols-2">
           {study.metrics.map((m) => (
