@@ -248,6 +248,14 @@ function Index() {
             >
               Experience
             </Link>
+            <a
+              href={resumeAsset.url}
+              download="Anubha_Singh_Resume.pdf"
+              className="rounded-sm border border-border px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-secondary"
+              aria-label="Download resume (PDF)"
+            >
+              Resume ↓
+            </a>
           </div>
         </section>
 
