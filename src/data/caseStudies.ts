@@ -5,13 +5,14 @@ export type Block =
   | { type: "ul"; items: string[] };
 
 export type CaseStudy = {
-  slug: "promo-manager" | "refunds" | "arnxt";
+  slug: "promo-manager" | "refunds" | "arnxt" | "trustrent";
   title: string;
   shortTitle: string;
   org: string;
   role: string;
   period: string;
   summary: string;
+  link?: { label: string; href: string };
   metrics: { value: string; label: string }[];
   tags: string[];
   blocks: Block[];
@@ -524,6 +525,117 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "p",
         text: "This wasn't “build an AR viewer”. It was emerging category validation, multi-surface platform architecture, operational pipeline design, data boundary decisions, merchant monetization strategy and infra coordination — thinking across user experience, merchant incentives, technical constraints, performance limits, security, exclusivity and business model design.",
+      },
+    ],
+  },
+  {
+    slug: "trustrent",
+    title: "TrustRent — Escrow-Based Rental Transaction Platform (0→1)",
+    shortTitle: "TrustRent",
+    org: "Independent Product",
+    role: "Product & Builder",
+    period: "0→1 MVP · Live prototype",
+    summary:
+      "An escrow-based rental transaction platform for India's rental market — protecting payments until agreed conditions are met, making transactions transparent, and giving tenants and landlords a neutral layer of trust.",
+    link: { label: "Visit trustrent.in", href: "https://www.trustrent.in/" },
+    metrics: [
+      { value: "0→1", label: "Functional MVP shipped" },
+      { value: "Live", label: "Deployed product at trustrent.in" },
+      { value: "Escrow", label: "Simulated transaction engine" },
+    ],
+    tags: ["0→1", "Fintech", "Escrow", "Rapid MVP"],
+    blocks: [
+      { type: "h2", text: "Problem Statement" },
+      {
+        type: "p",
+        text: "Rental transactions in India suffer from a lack of trust between tenants and landlords, security deposit disputes, payment fraud and last-minute cancellations, no transparent transaction tracking, and manual, fragmented payment processes. Both parties lack a neutral transaction layer ensuring safety and accountability.",
+      },
+      { type: "h2", text: "Product Vision" },
+      {
+        type: "p",
+        text: "Build a secure escrow-based rental transaction platform where:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Payments are protected until agreed conditions are met",
+          "Transactions are transparent and trackable",
+          "Users have confidence to transact with unknown parties",
+          "Non-technical users can manage agreements and payments easily",
+        ],
+      },
+      { type: "h2", text: "Target Users & Pain Points" },
+      { type: "p", text: "Independent landlords, tenants relocating to new cities, and small property brokers — each with a distinct trust gap:" },
+      {
+        type: "ul",
+        items: [
+          "Tenant — fear of losing deposit → escrow lock + staged release",
+          "Landlord — payment uncertainty → verified payment flow",
+          "Both — lack of transaction visibility → wallet + transaction tracker",
+          "Brokers — manual follow-ups → automated payment lifecycle",
+        ],
+      },
+      { type: "h2", text: "Product Scope (MVP)" },
+      {
+        type: "ul",
+        items: [
+          "Property listing & agreement flow",
+          "Digital wallet with escrow simulation",
+          "Transaction lifecycle management",
+          "Payment release conditions",
+          "Role-based user journeys",
+          "Dashboard with transaction states",
+          "Fraud prevention messaging",
+        ],
+      },
+      { type: "h2", text: "Key Product Decisions" },
+      {
+        type: "ul",
+        items: [
+          "Simulated escrow logic to validate UX before financial licensing",
+          "Wallet-based mental model to simplify complex fintech flows",
+          "Step-based transaction journey to reduce user anxiety",
+          "Neutral UI language to avoid landlord/tenant bias",
+          "Modular promo & rule system for future monetization",
+        ],
+      },
+      { type: "h2", text: "Tech Stack & Execution" },
+      {
+        type: "ul",
+        items: [
+          "Rapid prototyping platform with a simulated backend transaction engine",
+          "Escrow workflow logic design and wallet state management",
+          "Custom branding assets & UI flows (Figma for UX flows)",
+          "Supabase / mock APIs, deployed via static hosting",
+        ],
+      },
+      { type: "h2", text: "Fintech Concepts Applied" },
+      {
+        type: "ul",
+        items: [
+          "Escrow transaction lifecycle",
+          "Conditional payment release",
+          "Wallet ledger structure",
+          "Transaction state machines",
+          "Risk & fraud signaling UX",
+          "Compliance-aware UX flows",
+        ],
+      },
+      { type: "h2", text: "Learning Outcomes" },
+      {
+        type: "ul",
+        items: [
+          "Designed fintech transaction systems from scratch",
+          "Built a 0→1 product under real constraints",
+          "Translated regulatory complexity into user flows",
+          "Balanced trust, risk, and usability",
+          "Validated product hypotheses through a functional prototype",
+        ],
+      },
+      { type: "h2", text: "Limitations & Future Roadmap" },
+      {
+        type: "p",
+        text: "Real payments are intentionally disabled, compliance & KYC are future scope, and legal escrow integration is pending licensing. The roadmap covers licensed escrow provider integration, real payment gateway onboarding, KYC & compliance workflows, an AI fraud detection layer, and broker & enterprise dashboards.",
       },
     ],
   },
