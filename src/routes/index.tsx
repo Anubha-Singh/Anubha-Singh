@@ -234,10 +234,18 @@ function Index() {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={resumeAsset.url}
+              download="Anubha_Singh_Resume.pdf"
+              className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              aria-label="Download resume (PDF)"
+            >
+              Resume ↓
+            </a>
             <Link
               to="/"
               hash="work"
-              className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              className="rounded-sm border border-border px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-secondary"
             >
               View case studies
             </Link>
@@ -248,14 +256,6 @@ function Index() {
             >
               Experience
             </Link>
-            <a
-              href={resumeAsset.url}
-              download="Anubha_Singh_Resume.pdf"
-              className="rounded-sm border border-border px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-secondary"
-              aria-label="Download resume (PDF)"
-            >
-              Resume ↓
-            </a>
           </div>
         </section>
 
