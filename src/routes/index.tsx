@@ -3,6 +3,7 @@ import { Page } from "@/components/SiteChrome";
 import { socialIconMap } from "@/components/SocialIcons";
 import { caseStudies } from "@/data/caseStudies";
 import portraitAsset from "@/assets/anubha-portrait.jpg.asset.json";
+import resumeAsset from "@/assets/anubha-resume.pdf.asset.json";
 
 
 const TITLE = "Anubha Singh — Product Manager | Platform & Growth Systems";
