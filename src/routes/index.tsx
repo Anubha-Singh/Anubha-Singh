@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/SiteChrome";
 import { socialIconMap } from "@/components/SocialIcons";
 import { caseStudies } from "@/data/caseStudies";
-import portraitAsset from "@/assets/anubha-portrait.jpg.asset.json";
-import resumeAsset from "@/assets/anubha-resume.pdf.asset.json";
+import portraitUrl from "@/assets/anubha-portrait.png";
+import resumeUrl from "@/assets/Anubha_Singh_Resume.pdf";
 
 
 const TITLE = "Anubha Singh — Product Manager | Platform & Growth Systems";
@@ -203,7 +203,7 @@ function Index() {
               </h1>
             </div>
             <img
-              src={portraitAsset.url}
+              src={portraitUrl}
               alt="Portrait of Anubha Singh"
               className="h-44 w-44 shrink-0 rounded-full border border-border object-cover object-top shadow-sm sm:h-56 sm:w-56"
             />
@@ -235,7 +235,7 @@ function Index() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href={resumeAsset.url}
+              href={resumeUrl}
               download="Anubha_Singh_Resume.pdf"
               className="rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
               aria-label="Download resume (PDF)"
