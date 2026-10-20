@@ -209,13 +209,11 @@ function Index() {
             />
           </div>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            I moved into product because I enjoyed understanding why systems break, how decisions
-            scale and where users feel the impact when things go wrong. Through my work on growth,
-            quality and platform problems at Urban Company, and later owning 0→1 systems like promo
-            engines and self-serve refund automation, I've consistently worked on products that sit
-            on critical paths and require strong data, strategy and engineering trade-offs. Today
-            I'm focused on growing as a product builder in a product-first tech company and solving
-            problems that create meaningful impact at scale.
+            I’m a product manager who likes the high-stakes parts of a product: payments,
+            promotions, refunds, the systems that must be correct every time. I’m at ease with
+            ambiguity, I enjoy working closely with engineering, ops and business teams, and I’ve
+            taken 0→1 products from idea to launch at KPN Fresh and Quleep. I’m looking for a
+            product-first team where that ownership can scale.
           </p>
           <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {socialLinks.map((link) => (
