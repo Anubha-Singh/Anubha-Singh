@@ -173,7 +173,7 @@ function Index() {
               className="h-44 w-44 shrink-0 rounded-full border border-border object-cover object-top shadow-sm sm:h-56 sm:w-56"
             />
           </div>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-7 max-w-3xl text-base sm:text-lg leading-relaxed text-muted-foreground text-left sm:text-justify [text-justify:inter-word] [hyphens:auto]">
             As a Product Manager, I operate where complex systems must be accurate every time from shipping probabilistic ML models for demand forecasting and inventory replenishment, to architecting promo engines and automated payment/refund rails. I thrive in navigating ambiguous constraints, bridging data science and engineering with on-the-ground operations, and owning 0→1 products from concept to scale. Having delivered mission-critical products at KPN Fresh and Quleep, I’m looking to bring deep system ownership and builder rigor to a high-impact, product-first team.
           </p>
           <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 text-sm">
@@ -227,29 +227,31 @@ function Index() {
 
         <section id="skills" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
           <p className="eyebrow">Skills & expertise</p>
-          <h2 className="mt-2 text-2xl sm:text-3xl font-display text-ink">
+          <h2 className="mt-3 text-3xl text-ink sm:text-4xl">
             Systems & Product Craft
           </h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Core domains of technical ownership across platform architecture, quantitative modeling, and 0→1 execution.
           </p>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {skillPillars.map((pillar) => (
               <div
                 key={pillar.title}
-                className="flex flex-col rounded-lg border border-border/80 bg-card p-6 transition-colors hover:border-primary/40 hover:bg-secondary/40"
+                className="rounded border border-border bg-card px-6 py-6 transition-colors hover:bg-secondary flex flex-col justify-between"
               >
-                <h3 className="text-base font-semibold text-ink">{pillar.title}</h3>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground min-h-[32px]">
-                  {pillar.summary}
-                </p>
-                <div className="mt-4 border-t border-border pt-4">
-                  <ul className="space-y-2.5 text-sm">
+                <div>
+                  <h3 className="text-xl text-ink">{pillar.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {pillar.summary}
+                  </p>
+                </div>
+                <div className="mt-5 border-t border-border pt-4">
+                  <ul className="space-y-2 text-sm">
                     {pillar.skills.map((skill) => (
-                      <li key={skill} className="flex items-center gap-2 text-ink/90">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary/80 shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">{skill}</span>
+                      <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary/70 shrink-0" />
+                        <span className="text-foreground">{skill}</span>
                       </li>
                     ))}
                   </ul>
