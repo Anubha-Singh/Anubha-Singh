@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Page } from "./SiteChrome";
+import { SlideDeckViewer } from "@/components/SlideDeckViewer";
 import type { CaseStudy } from "@/data/caseStudies";
 
 export function CaseStudyPage({ study }: { study: CaseStudy }) {
@@ -33,6 +34,12 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
             </div>
           ))}
         </dl>
+
+        {(study.slug === "pos-gap-analysis" || study.slug === "loyalty-program") && (
+          <div className="mt-10">
+            <SlideDeckViewer defaultDeck={study.slug === "pos-gap-analysis" ? "pos" : "loyalty"} />
+          </div>
+        )}
 
         <div className="prose-case mt-4 pb-8">
           {study.blocks.map((b, i) => {

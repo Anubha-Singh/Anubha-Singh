@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Youtube } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const KaggleIcon = ({ size = 16 }: { size?: number }) => (
@@ -29,6 +29,8 @@ export const MediumIcon = ({ size = 16 }: { size?: number }) => (
 export const socialIconMap: Record<string, ReactNode> = {
   LinkedIn: <Linkedin size={16} />,
   GitHub: <Github size={16} />,
+  YouTube: <Youtube size={16} />,
+  Youtube: <Youtube size={16} />,
   Kaggle: <KaggleIcon size={16} />,
   Medium: <MediumIcon size={16} />,
   Email: <Mail size={16} />,

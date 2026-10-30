@@ -10,9 +10,12 @@ export function SiteHeader() {
         <Link to="/" className="font-display text-lg tracking-tight text-ink">
           Anubha Singh
         </Link>
-        <nav className="flex items-center gap-6 text-sm text-muted-foreground">
+        <nav className="flex items-center gap-5 sm:gap-6 text-sm text-muted-foreground">
+          <Link to="/" hash="independent-projects" className="transition-colors hover:text-primary">
+            Independent Projects
+          </Link>
           <Link to="/" hash="work" className="transition-colors hover:text-primary">
-            Work
+            Case Studies
           </Link>
           <Link to="/" hash="experience" className="transition-colors hover:text-primary">
             Experience
@@ -29,6 +32,7 @@ export function SiteHeader() {
 const contactLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
   { label: "GitHub", href: "https://github.com/Anubha-Singh" },
+  { label: "YouTube", href: "https://youtube.com/@gritgrid-4u?si=U3M_U6rPdTWWtfXK" },
   { label: "Kaggle", href: "https://www.kaggle.com/cerolacia" },
   { label: "Medium", href: "https://medium.com/@anubhabit687" },
   { label: "Email", href: "mailto:anubhabit687@gmail.com" },

@@ -5,7 +5,7 @@ export type Block =
   | { type: "ul"; items: string[] };
 
 export type CaseStudy = {
-  slug: "promo-manager" | "refunds" | "arnxt" | "trustrent";
+  slug: "testmaker" | "promo-manager" | "refunds" | "arnxt" | "trustrent" | string;
   title: string;
   shortTitle: string;
   org: string;
@@ -13,12 +13,75 @@ export type CaseStudy = {
   period: string;
   summary: string;
   link?: { label: string; href: string };
+  pdfUrl?: string;
   metrics: { value: string; label: string }[];
   tags: string[];
   blocks: Block[];
 };
 
-export const caseStudies: CaseStudy[] = [
+export const mockTestMakerCaseStudy: CaseStudy = {
+    slug: "testmaker",
+    title: "Grit x Grid Mock Test Maker — Timed Sectional Test Engine (0→1)",
+    shortTitle: "Mock Test Maker",
+    org: "Grit x Grid",
+    role: "Product & Builder",
+    period: "0→1 MVP · Live product",
+    summary:
+      "An interactive testing platform that transforms question documents into timed, sectional mock exams with automated scoring, question status tracking, and diagnostic action plans for what to fix next.",
+    link: { label: "Visit gritxgrid-testmaker.vercel.app", href: "https://gritxgrid-testmaker.vercel.app/" },
+    metrics: [
+      { value: "0→1", label: "Shipped interactive MVP" },
+      { value: "Live", label: "Deployed at gritxgrid-testmaker.vercel.app" },
+      { value: "Automated", label: "Timed sectional test engine" },
+    ],
+    tags: ["0→1", "EdTech", "Test Engine", "Rapid MVP", "Product Systems"],
+    blocks: [
+      { type: "h2", text: "Problem Statement" },
+      {
+        type: "p",
+        text: "Students and aspirants preparing for competitive exams often have access to practice question documents and question banks, but practicing in unstructured document formats fails to simulate the real exam environment. Static PDFs and docs lack sectional timing, question palette navigation, real-time pacing feedback, and automated diagnostics.",
+      },
+      {
+        type: "p",
+        text: "The core challenge was to build a zero-friction tool that turns static question material into an authentic, timed sectional mock test experience with deep question-by-question analytics—delivering next steps, not just a score.",
+      },
+      { type: "h2", text: "Product Vision & Core Features" },
+      {
+        type: "ul",
+        items: [
+          "Document to Mock Test Conversion: Ingest and organize questions into structured, sectional exams effortlessly.",
+          "Authentic Exam Simulation: Real-time countdown timers, sectional transitions, question palette status (attempted, marked for review, unattempted), and auto-submission upon timer expiry.",
+          "Diagnostic Post-Test Analysis: Beyond raw scores, candidates receive question-by-question timing breakdowns, accuracy metrics, and targeted action items on what concepts to review next.",
+          "Frictionless Experience: Clean, responsive user interface optimized for fast loading and low latency during test execution.",
+        ],
+      },
+      { type: "h2", text: "My Role & System Architecture" },
+      {
+        type: "p",
+        text: "As the Product Creator and Builder, I conceptualized the product strategy, scoped the MVP, designed user workflows, and built the application end-to-end:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Defined core user personas, journeys, and test lifecycle states (Prep → Active Test → Review & Diagnostics).",
+          "Engineered a deterministic state machine managing section timing, auto-save of responses, and edge cases like browser refreshes and interruptions.",
+          "Designed clear, scannable data visualization for candidate performance and error analysis.",
+          "Shipped and deployed the live product at gritxgrid-testmaker.vercel.app.",
+        ],
+      },
+      { type: "h2", text: "Impact & Key Learnings" },
+      {
+        type: "ul",
+        items: [
+          "Delivered a functional 0→1 EdTech tool addressing a concrete candidate pain point.",
+          "Created an intuitive bridge between static prep material and high-fidelity exam simulation.",
+          "Built a foundation for expanding question ingestion intelligence and personalized revision workflows.",
+        ],
+      },
+    ],
+  };
+
+export const workCaseStudies: CaseStudy[] = [
   {
     slug: "promo-manager",
     title: "Building a Promo Manager at Scale (0→1)",
@@ -354,6 +417,100 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
+    slug: "pos-gap-analysis",
+    title: "Retail POS Gap Analysis & Modernization Architecture",
+    shortTitle: "POS Gap Analysis",
+    org: "KPN Fresh",
+    role: "Associate Product Manager",
+    period: "System Architecture & Gap Analysis",
+    summary:
+      "A deep 30+ gap operational and architectural analysis replacing 1980s legacy POS with a modern local-first Cloud/Express POS (Penguin POS)—eliminating offline crash downtime, data sync leaks, and manual reconciliation.",
+    metrics: [
+      { value: "30+", label: "Functional gaps diagnosed" },
+      { value: "Local-First", label: "Offline-resilient architecture" },
+      { value: "Zero Leak", label: "Sync & reconciliation target" },
+    ],
+    tags: ["POS 2.0", "System Architecture", "Offline Sync", "Retail Ops", "Gap Analysis"],
+    blocks: [
+      { type: "h2", text: "Executive Summary" },
+      {
+        type: "p",
+        text: "Bluekode's legacy POS system, in use since the 1980s, was operational when KPN was acquired across 30 stores. Functional gaps caused data inconsistencies, frequent manual interventions, and customer checkout friction. Store managers navigated multiple fragmented interfaces with no centralized visibility into terminal performance, and crash recoveries required manual .exe launches.",
+      },
+      {
+        type: "p",
+        text: "This gap analysis benchmarked legacy POS workflows against the in-house Penguin Cloud POS and Express POS, formulating the blueprint for POS 2.0: a lean, purpose-built POS for sub-second cashier checkout paired with a centralized web Command Center for back-office operations.",
+      },
+      { type: "h2", text: "Key Analysis Modules & Scope" },
+      {
+        type: "ul",
+        items: [
+          "Cashier Workflows: In-depth examination of Cash Bill, Sales Returns, Terminal Management, Paid Out & Close denomination tracking, and multi-mode payment capture (EDC, UPI, cash).",
+          "Store Manager Workflows: Day-end closing, DSD PO, GRN verification against PO/invoices, physical stock audits, F&V rate entry, and wastage/expiry logging.",
+          "Local-First vs Cloud Architecture: Transitioning from fragile local server dependencies to an automated loop (10s → 2s → 3s retry intervals) with intelligent offline sync and automatic server detection.",
+          "Hardware Ecosystem: Evaluation of peripherals including EDC payment machines, Data Logic barcode scanners, weighing machines, Bizerba scales, and thermal receipt printers.",
+          "Competitive Benchmarking: 30+ front-office and back-office capabilities evaluated across leading modern retail systems.",
+        ],
+      },
+      { type: "h2", text: "Strategic Recommendations for POS 2.0" },
+      {
+        type: "ul",
+        items: [
+          "Decouple Billing from Administrative Flows: Restrict terminal POS strictly to fast checkout; move non-checkout administrative flows (goods receiving, waste logging, stock audits) to web Command Center.",
+          "Local-First Offline Resilience: Guarantee uninterrupted billing during server or network failure, auto-syncing transactions once connectivity is restored.",
+          "Unified Customer Return Engine: Enable bill search, OTP-based authorization, and instant wallet credit for returns without requiring supervisor overrides.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "loyalty-program",
+    title: "Tier-Based Omnichannel Loyalty Program for B2P Partners",
+    shortTitle: "B2P Loyalty Program",
+    org: "IBO",
+    role: "Product Lead / Strategy",
+    period: "0→1 Loyalty Strategy",
+    summary:
+      "An omnichannel tier-and-points loyalty architecture for 15,000+ construction & renovation professionals (Contractors, Technicians, Architects, Builders)—benchmarking global retail models and targeting 16%–22% partner returns.",
+    metrics: [
+      { value: "15K+", label: "Target B2P professional network" },
+      { value: "16–22%", label: "Target partner return %" },
+      { value: "Tier+Points", label: "Omnichannel reward model" },
+    ],
+    tags: ["Loyalty", "B2P Strategy", "Customer Journeys", "Tiered Rewards", "Fintech"],
+    blocks: [
+      { type: "h2", text: "Executive Summary" },
+      {
+        type: "p",
+        text: "Business-to-Professional (B2P) partners—including Contractors, Technicians, Architects, Interior Designers, and Builders—represent high-frequency, high-ticket purchasers in the home building supplies market. However, baseline engagement showed only 21.5% of approved partners giving referrals, and only 65% of transacted partners receiving cashback.",
+      },
+      {
+        type: "p",
+        text: "To accelerate repeat order rates, lower customer acquisition costs, and foster long-term partner lock-in, I designed an omnichannel tiered loyalty program combining instant point burn, delivery fee waivers, and exclusive professional perks.",
+      },
+      { type: "h2", text: "Primary Research & Journey Insights" },
+      {
+        type: "ul",
+        items: [
+          "Contractors (4,965 profiles, 49% order share): Pain points centered on delivery delays, item availability, and credit requirements. Recommended dedicated account managers and bulk paint/wire discounts.",
+          "Technicians (6,503 profiles, 22% order share): Required quick access, item quotations, and instant cashback on daily site essentials.",
+          "Architects & Interior Designers (1,761 profiles, 25% order share): Needed NEFT payment modes, priority quotations, and project spend tracking logs.",
+          "Store vs Online Journey Mapping: Mapped friction points from product discovery to delivery, returns, and post-purchase resolution.",
+        ],
+      },
+      { type: "h2", text: "Proposed Tier Architecture & Unit Economics" },
+      {
+        type: "ul",
+        items: [
+          "IBO Member (₹0–₹9,999 annual spend): 5% points earn/burn, free delivery on orders >₹2,500, access to promotional sales (10% total return).",
+          "IBO Pro Member (₹9,999–₹19,999 annual spend): 10% points earn/burn, free delivery >₹1,000, 1.5% wallet cashback, differentiated pricing (14%–16% total return).",
+          "IBO Premium Member (>₹20,000 annual spend): 15% points earn/burn, unlimited free delivery, 3% wallet cashback, dedicated account manager, credit/EMI payment (19%–22% total return).",
+          "Secondary Benchmarking: Grounded against tier programs of Home Depot (Pro Xtra), Lowes, Mistry Store, Industry Buying, and Kajaria Ceramics.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "arnxt",
     title: "ARNxt — A Full-Stack AR Commerce Platform (0→1)",
     shortTitle: "ARNxt",
@@ -528,117 +685,130 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
-  {
-    slug: "trustrent",
-    title: "TrustRent — Escrow-Based Rental Transaction Platform (0→1)",
-    shortTitle: "TrustRent",
-    org: "Independent Product",
-    role: "Product & Builder",
-    period: "0→1 MVP · Live prototype",
-    summary:
-      "An escrow-based rental transaction platform for India's rental market — protecting payments until agreed conditions are met, making transactions transparent, and giving tenants and landlords a neutral layer of trust.",
-    link: { label: "Visit trustrent.in", href: "https://www.trustrent.in/" },
-    metrics: [
-      { value: "0→1", label: "Functional MVP shipped" },
-      { value: "Live", label: "Deployed product at trustrent.in" },
-      { value: "Escrow", label: "Simulated transaction engine" },
-    ],
-    tags: ["0→1", "Fintech", "Escrow", "Rapid MVP"],
-    blocks: [
-      { type: "h2", text: "Problem Statement" },
-      {
-        type: "p",
-        text: "Rental transactions in India suffer from a lack of trust between tenants and landlords, security deposit disputes, payment fraud and last-minute cancellations, no transparent transaction tracking, and manual, fragmented payment processes. Both parties lack a neutral transaction layer ensuring safety and accountability.",
-      },
-      { type: "h2", text: "Product Vision" },
-      {
-        type: "p",
-        text: "Build a secure escrow-based rental transaction platform where:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Payments are protected until agreed conditions are met",
-          "Transactions are transparent and trackable",
-          "Users have confidence to transact with unknown parties",
-          "Non-technical users can manage agreements and payments easily",
-        ],
-      },
-      { type: "h2", text: "Target Users & Pain Points" },
-      { type: "p", text: "Independent landlords, tenants relocating to new cities, and small property brokers — each with a distinct trust gap:" },
-      {
-        type: "ul",
-        items: [
-          "Tenant — fear of losing deposit → escrow lock + staged release",
-          "Landlord — payment uncertainty → verified payment flow",
-          "Both — lack of transaction visibility → wallet + transaction tracker",
-          "Brokers — manual follow-ups → automated payment lifecycle",
-        ],
-      },
-      { type: "h2", text: "Product Scope (MVP)" },
-      {
-        type: "ul",
-        items: [
-          "Property listing & agreement flow",
-          "Digital wallet with escrow simulation",
-          "Transaction lifecycle management",
-          "Payment release conditions",
-          "Role-based user journeys",
-          "Dashboard with transaction states",
-          "Fraud prevention messaging",
-        ],
-      },
-      { type: "h2", text: "Key Product Decisions" },
-      {
-        type: "ul",
-        items: [
-          "Simulated escrow logic to validate UX before financial licensing",
-          "Wallet-based mental model to simplify complex fintech flows",
-          "Step-based transaction journey to reduce user anxiety",
-          "Neutral UI language to avoid landlord/tenant bias",
-          "Modular promo & rule system for future monetization",
-        ],
-      },
-      { type: "h2", text: "Tech Stack & Execution" },
-      {
-        type: "ul",
-        items: [
-          "Rapid prototyping platform with a simulated backend transaction engine",
-          "Escrow workflow logic design and wallet state management",
-          "Custom branding assets & UI flows (Figma for UX flows)",
-          "Supabase / mock APIs, deployed via static hosting",
-        ],
-      },
-      { type: "h2", text: "Fintech Concepts Applied" },
-      {
-        type: "ul",
-        items: [
-          "Escrow transaction lifecycle",
-          "Conditional payment release",
-          "Wallet ledger structure",
-          "Transaction state machines",
-          "Risk & fraud signaling UX",
-          "Compliance-aware UX flows",
-        ],
-      },
-      { type: "h2", text: "Learning Outcomes" },
-      {
-        type: "ul",
-        items: [
-          "Designed fintech transaction systems from scratch",
-          "Built a 0→1 product under real constraints",
-          "Translated regulatory complexity into user flows",
-          "Balanced trust, risk, and usability",
-          "Validated product hypotheses through a functional prototype",
-        ],
-      },
-      { type: "h2", text: "Limitations & Future Roadmap" },
-      {
-        type: "p",
-        text: "Real payments are intentionally disabled, compliance & KYC are future scope, and legal escrow integration is pending licensing. The roadmap covers licensed escrow provider integration, real payment gateway onboarding, KYC & compliance workflows, an AI fraud detection layer, and broker & enterprise dashboards.",
-      },
-    ],
-  },
 ];
 
-export const getCaseStudy = (slug: string) => caseStudies.find((c) => c.slug === slug);
+export const trustRentCaseStudy: CaseStudy = {
+  slug: "trustrent",
+  title: "TrustRent — Escrow-Based Rental Transaction Platform (0→1)",
+  shortTitle: "TrustRent",
+  org: "Independent Product",
+  role: "Product & Builder",
+  period: "0→1 MVP · Live prototype",
+  summary:
+    "An escrow-based rental transaction platform for India's rental market — protecting payments until agreed conditions are met, making transactions transparent, and giving tenants and landlords a neutral layer of trust.",
+  link: { label: "Visit trustrent.in", href: "https://www.trustrent.in/" },
+  metrics: [
+    { value: "0→1", label: "Functional MVP shipped" },
+    { value: "Live", label: "Deployed product at trustrent.in" },
+    { value: "Escrow", label: "Simulated transaction engine" },
+  ],
+  tags: ["0→1", "Fintech", "Escrow", "Rapid MVP"],
+  blocks: [
+    { type: "h2", text: "Problem Statement" },
+    {
+      type: "p",
+      text: "Rental transactions in India suffer from a lack of trust between tenants and landlords, security deposit disputes, payment fraud and last-minute cancellations, no transparent transaction tracking, and manual, fragmented payment processes. Both parties lack a neutral transaction layer ensuring safety and accountability.",
+    },
+    { type: "h2", text: "Product Vision" },
+    {
+      type: "p",
+      text: "Build a secure escrow-based rental transaction platform where:",
+    },
+    {
+      type: "ul",
+      items: [
+        "Payments are protected until agreed conditions are met",
+        "Transactions are transparent and trackable",
+        "Users have confidence to transact with unknown parties",
+        "Non-technical users can manage agreements and payments easily",
+      ],
+    },
+    { type: "h2", text: "Target Users & Pain Points" },
+    { type: "p", text: "Independent landlords, tenants relocating to new cities, and small property brokers — each with a distinct trust gap:" },
+    {
+      type: "ul",
+      items: [
+        "Tenant — fear of losing deposit → escrow lock + staged release",
+        "Landlord — payment uncertainty → verified payment flow",
+        "Both — lack of transaction visibility → wallet + transaction tracker",
+        "Brokers — manual follow-ups → automated payment lifecycle",
+      ],
+    },
+    { type: "h2", text: "Product Scope (MVP)" },
+    {
+      type: "ul",
+      items: [
+        "Property listing & agreement flow",
+        "Digital wallet with escrow simulation",
+        "Transaction lifecycle management",
+        "Payment release conditions",
+        "Role-based user journeys",
+        "Dashboard with transaction states",
+        "Fraud prevention messaging",
+      ],
+    },
+    { type: "h2", text: "Key Product Decisions" },
+    {
+      type: "ul",
+      items: [
+        "Simulated escrow logic to validate UX before financial licensing",
+        "Wallet-based mental model to simplify complex fintech flows",
+        "Step-based transaction journey to reduce user anxiety",
+        "Neutral UI language to avoid landlord/tenant bias",
+        "Modular promo & rule system for future monetization",
+      ],
+    },
+    { type: "h2", text: "Tech Stack & Execution" },
+    {
+      type: "ul",
+      items: [
+        "Rapid prototyping platform with a simulated backend transaction engine",
+        "Escrow workflow logic design and wallet state management",
+        "Custom branding assets & UI flows (Figma for UX flows)",
+        "Supabase / mock APIs, deployed via static hosting",
+      ],
+    },
+    { type: "h2", text: "Fintech Concepts Applied" },
+    {
+      type: "ul",
+      items: [
+        "Escrow transaction lifecycle",
+        "Conditional payment release",
+        "Wallet ledger structure",
+        "Transaction state machines",
+        "Risk & fraud signaling UX",
+        "Compliance-aware UX flows",
+      ],
+    },
+    { type: "h2", text: "Learning Outcomes" },
+    {
+      type: "ul",
+      items: [
+        "Designed fintech transaction systems from scratch",
+        "Built a 0→1 product under real constraints",
+        "Translated regulatory complexity into user flows",
+        "Balanced trust, risk, and usability",
+        "Validated product hypotheses through a functional prototype",
+      ],
+    },
+    { type: "h2", text: "Limitations & Future Roadmap" },
+    {
+      type: "p",
+      text: "Real payments are intentionally disabled, compliance & KYC are future scope, and legal escrow integration is pending licensing. The roadmap covers licensed escrow provider integration, real payment gateway onboarding, KYC & compliance workflows, an AI fraud detection layer, and broker & enterprise dashboards.",
+    },
+  ],
+};
+
+export const independentProjects: CaseStudy[] = [
+  mockTestMakerCaseStudy,
+  trustRentCaseStudy,
+];
+
+export const allCaseStudies: CaseStudy[] = [
+  ...independentProjects,
+  ...workCaseStudies,
+];
+
+export const caseStudies: CaseStudy[] = allCaseStudies;
+
+export const getCaseStudy = (slug: string) => allCaseStudies.find((c) => c.slug === slug);

@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/SiteChrome";
+import { SlideDeckViewer } from "@/components/SlideDeckViewer";
 import { socialIconMap } from "@/components/SocialIcons";
-import { caseStudies } from "@/data/caseStudies";
+import { independentProjects, workCaseStudies } from "@/data/caseStudies";
 import portraitUrl from "@/assets/anubha-portrait.png";
 import resumeUrl from "@/assets/Anubha_Singh_Resume.pdf";
 
@@ -57,6 +58,7 @@ const recommendations = [
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/anubha-singh-310879148/" },
   { label: "GitHub", href: "https://github.com/Anubha-Singh" },
+  { label: "YouTube", href: "https://youtube.com/@gritgrid-4u?si=U3M_U6rPdTWWtfXK" },
   { label: "Kaggle", href: "https://www.kaggle.com/cerolacia" },
   { label: "Medium", href: "https://medium.com/@anubhabit687" },
   { label: "Email", href: "mailto:anubhabit687@gmail.com" },
@@ -112,79 +114,42 @@ const internships = [
   },
 ];
 
-const workSamples = [
-  {
-    title: "CMS — Banners",
-    note: "Centralized CMS that cut release TAT from days to minutes.",
-    href: "https://docs.google.com/presentation/d/1g73hz4a9bySwNpYzwrlINu-Sl0smvIY5/edit?usp=sharing&ouid=114924555015695209001&rtpof=true&sd=true",
-  },
-  {
-    title: "POS Gap Analysis",
-    note: "30+ gaps identified to shape the POS 2.0 roadmap.",
-    href: "https://docs.google.com/presentation/d/1_PHTe62otXeZ-fqPo3bQLQoc7HF7J0bX/edit?usp=sharing&ouid=103117566921272872624&rtpof=true&sd=true",
-  },
-  {
-    title: "Loyalty — Tier-Based B2P Program",
-    note: "Designed for 15K+ partners with 16–22% returns.",
-    href: "https://docs.google.com/presentation/d/1Qpb8hU0vGzrsFdX2Y0qyT7q3LYQ3ycUv/edit?usp=sharing&ouid=114924555015695209001&rtpof=true&sd=true",
-  },
-  {
-    title: "Chatbot Flow",
-    note: "Issue-resolution chatbot flows evaluated across the order lifecycle.",
-    href: "https://docs.google.com/presentation/d/123MKN5ajBoX7lEWXsZTO-SZue58pCvLA/edit?usp=sharing&ouid=103117566921272872624&rtpof=true&sd=true",
-  },
-];
 
-const skillCategories = [
+interface SkillPillar {
+  title: string;
+  summary: string;
+  skills: string[];
+}
+
+const skillPillars: SkillPillar[] = [
   {
-    title: "Product",
+    title: "Platform & Rails",
+    summary: "High-integrity financial & operational systems.",
     skills: [
-      "Product Strategy",
-      "Product Discovery",
-      "0→1 Product Development",
-      "PRDs & Roadmaps",
-      "Prioritization",
-      "Experimentation",
-      "Product Analytics",
-      "Stakeholder Management",
+      "Promo & Rule Engines",
+      "Payment & Refund Rails",
+      "POS & ERP Integrations",
+      "State Machine Architecture",
     ],
   },
   {
-    title: "Data",
+    title: "Data & Forecasting",
+    summary: "Bridging statistical models with on-the-ground ops.",
     skills: [
-      "SQL",
-      "MS Excel",
-      "BigQuery",
-      "Looker",
-      "Tableau",
-      "Power BI",
-      "CleverTap",
-      "Mixpanel",
-      "Funnel & Cohort Analysis",
-      "A/B Testing",
-      "Product Metrics",
+      "Demand Forecasting ML",
+      "Replenishment Algorithms",
+      "Unit Economics & Funnels",
+      "SQL (BigQuery) & Analytics",
     ],
   },
   {
-    title: "Technical",
+    title: "0→1 Product Craft",
+    summary: "Turning ambiguity into functional, shipped product.",
     skills: [
-      "APIs & Webhooks",
-      "Payment Systems",
-      "Event-driven Systems",
-      "Postman",
-      "Figma",
-    ],
-  },
-  {
-    title: "AI / Builder",
-    skills: [
-      "LLM Product Design",
-      "AI Evals",
-      "AI-assisted Prototyping",
-      "Lovable",
-      "Cursor / Claude Code",
-      "Rapid MVP Development",
-      "Vercel",
+      "0→1 MVP Scoping & Launch",
+      "PRDs & State Machine Specs",
+      "AI Prototyping & Evals",
+      "Cross-System UX & GTM",
     ],
   },
 ];
@@ -209,11 +174,7 @@ function Index() {
             />
           </div>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            I’m a product manager who likes the high-stakes parts of a product: payments,
-            promotions, refunds, the systems that must be correct every time. I’m at ease with
-            ambiguity, I enjoy working closely with engineering, ops and business teams, and I’ve
-            taken 0→1 products from idea to launch at KPN Fresh and Quleep. I’m looking for a
-            product-first team where that ownership can scale.
+            As a Product Manager, I operate where complex systems must be accurate every time from shipping probabilistic ML models for demand forecasting and inventory replenishment, to architecting promo engines and automated payment/refund rails. I thrive in navigating ambiguous constraints, bridging data science and engineering with on-the-ground operations, and owning 0→1 products from concept to scale. Having delivered mission-critical products at KPN Fresh and Quleep, I’m looking to bring deep system ownership and builder rigor to a high-impact, product-first team.
           </p>
           <div className="mt-9 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {socialLinks.map((link) => (
@@ -242,10 +203,17 @@ function Index() {
             </a>
             <Link
               to="/"
+              hash="independent-projects"
+              className="rounded-sm border border-border px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-secondary"
+            >
+              Independent Projects
+            </Link>
+            <Link
+              to="/"
               hash="work"
               className="rounded-sm border border-border px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-secondary"
             >
-              View case studies
+              Case Studies
             </Link>
             <Link
               to="/"
@@ -259,27 +227,32 @@ function Index() {
 
         <section id="skills" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
           <p className="eyebrow">Skills & expertise</p>
-          <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
-            The toolkit behind every product decision.
+          <h2 className="mt-2 text-2xl sm:text-3xl font-display text-ink">
+            Systems & Product Craft
           </h2>
-          <div className="mt-12 flex flex-col gap-10 sm:gap-12">
-            {skillCategories.map((category, i) => (
-              <div key={category.title}>
-                <div className="mb-4 flex items-baseline justify-between border-b border-border pb-2">
-                  <h3 className="font-display text-2xl text-ink">{category.title}</h3>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 text-sm leading-relaxed text-muted-foreground">
-                  {category.skills.map((skill, j) => (
-                    <span key={skill} className="inline-flex items-baseline gap-4">
-                      <span>{skill}</span>
-                      {j < category.skills.length - 1 && (
-                        <span className="text-primary/40">•</span>
-                      )}
-                    </span>
-                  ))}
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+            Core domains of technical ownership across platform architecture, quantitative modeling, and 0→1 execution.
+          </p>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {skillPillars.map((pillar) => (
+              <div
+                key={pillar.title}
+                className="flex flex-col rounded-lg border border-border/80 bg-card p-6 transition-colors hover:border-primary/40 hover:bg-secondary/40"
+              >
+                <h3 className="text-base font-semibold text-ink">{pillar.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground min-h-[32px]">
+                  {pillar.summary}
+                </p>
+                <div className="mt-4 border-t border-border pt-4">
+                  <ul className="space-y-2.5 text-sm">
+                    {pillar.skills.map((skill) => (
+                      <li key={skill} className="flex items-center gap-2 text-ink/90">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary/80 shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -305,25 +278,46 @@ function Index() {
           </div>
         </section>
 
-        <section id="work" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
-          <p className="eyebrow">Selected case studies</p>
+        <section id="independent-projects" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Independent Projects · 0→1 Products</p>
           <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
-            Real products I've shipped — focused on impact, trade-offs and execution.
+            Products I've built & launched independently.
           </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            End-to-end applications conceptualized, scoped, engineered, and shipped live to address real market problems.
+          </p>
 
-          <div className="mt-12 grid gap-4">
-            {caseStudies.map((c) => (
-              <Link
+          <div className="mt-10 grid gap-4">
+            {independentProjects.map((c) => (
+              <div
                 key={c.slug}
-                to="/work/$slug"
-                params={{ slug: c.slug }}
-                className="group grid gap-6 rounded border border-border bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
+                className="group relative grid gap-6 rounded border border-border bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
               >
                 <div>
-                  <p className="eyebrow">
-                    {c.org} · {c.role}
-                  </p>
-                  <h3 className="mt-2 text-2xl text-ink group-hover:text-primary">{c.title}</h3>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="eyebrow">
+                      {c.org} · {c.role}
+                    </p>
+                    {c.link && (
+                      <a
+                        href={c.link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                      >
+                        Live App ↗
+                      </a>
+                    )}
+                  </div>
+                  <h3 className="mt-2 text-2xl text-ink">
+                    <Link
+                      to="/work/$slug"
+                      params={{ slug: c.slug }}
+                      className="transition-colors hover:text-primary focus:outline-none"
+                    >
+                      {c.title}
+                    </Link>
+                  </h3>
                   <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
                     {c.summary}
                   </p>
@@ -338,12 +332,132 @@ function Index() {
                     ))}
                   </div>
                 </div>
-                <div className="sm:text-right">
-                  <p className="font-display text-3xl text-primary">{c.metrics[0]?.value}</p>
-                  <p className="text-xs text-muted-foreground">{c.metrics[0]?.label}</p>
-
+                <div className="flex flex-col gap-3 sm:items-end sm:text-right">
+                  <div>
+                    <p className="font-display text-3xl text-primary">{c.metrics[0]?.value}</p>
+                    <p className="text-xs text-muted-foreground">{c.metrics[0]?.label}</p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3 pt-2">
+                    {c.link && (
+                      <a
+                        href={c.link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+                      >
+                        {c.link.label} ↗
+                      </a>
+                    )}
+                    <Link
+                      to="/work/$slug"
+                      params={{ slug: c.slug }}
+                      className="text-xs font-medium text-muted-foreground transition-colors hover:text-ink"
+                    >
+                      Case study →
+                    </Link>
+                  </div>
                 </div>
-              </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="work" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
+          <p className="eyebrow">Full-Time Deliverables · Case Studies</p>
+          <h2 className="mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
+            Platform & growth systems shipped in full-time roles.
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Core platform capabilities, checkout guardrails, and customer systems delivered at KPN Fresh, IBO and Quleep.
+          </p>
+
+          {/* Interactive Slide Deck Viewer */}
+          <div id="deck-viewer" className="mt-8 scroll-mt-20">
+            <SlideDeckViewer />
+          </div>
+
+          <div className="mt-12 grid gap-4">
+            {workCaseStudies.map((c) => (
+              <div
+                key={c.slug}
+                className="group relative grid gap-6 rounded border border-border bg-card px-6 py-8 transition-colors hover:bg-secondary sm:grid-cols-[1fr_auto] sm:items-end"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="eyebrow">
+                      {c.org} · {c.role}
+                    </p>
+                    {(c.slug === "pos-gap-analysis" || c.slug === "loyalty-program") ? (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                        Slide Deck Included
+                      </span>
+                    ) : c.link ? (
+                      <a
+                        href={c.link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                      >
+                        Live App ↗
+                      </a>
+                    ) : null}
+                  </div>
+                  <h3 className="mt-2 text-2xl text-ink">
+                    <Link
+                      to="/work/$slug"
+                      params={{ slug: c.slug }}
+                      className="transition-colors hover:text-primary focus:outline-none"
+                    >
+                      {c.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                    {c.summary}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {c.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3 sm:items-end sm:text-right">
+                  <div>
+                    <p className="font-display text-3xl text-primary">{c.metrics[0]?.value}</p>
+                    <p className="text-xs text-muted-foreground">{c.metrics[0]?.label}</p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3 pt-2">
+                    {(c.slug === "pos-gap-analysis" || c.slug === "loyalty-program") ? (
+                      <a
+                        href="#deck-viewer"
+                        className="text-xs font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+                      >
+                        View in slide player ↑
+                      </a>
+                    ) : c.link ? (
+                      <a
+                        href={c.link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+                      >
+                        {c.link.label} ↗
+                      </a>
+                    ) : null}
+                    <Link
+                      to="/work/$slug"
+                      params={{ slug: c.slug }}
+                      className="text-xs font-medium text-muted-foreground transition-colors hover:text-ink"
+                    >
+                      Case study →
+                    </Link>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </section>
@@ -394,23 +508,6 @@ function Index() {
           </div>
         </section>
 
-        <section className="rule-top mx-auto max-w-5xl px-6 py-16">
-          <p className="eyebrow">Work samples</p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {workSamples.map((w) => (
-              <a
-                key={w.title}
-                href={w.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded border border-border bg-card px-6 py-6 transition-colors hover:bg-secondary"
-              >
-                <h3 className="text-lg text-ink">{w.title} ↗</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{w.note}</p>
-              </a>
-            ))}
-          </div>
-        </section>
 
         <section id="recommendations" className="rule-top mx-auto max-w-5xl scroll-mt-20 px-6 py-16">
           <p className="eyebrow">Recommendations</p>
